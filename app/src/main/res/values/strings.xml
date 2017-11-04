@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RandoName</string>
+    <string name="add">Agregar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="take_name">Sacar un nombre</string>
+    <string name="ok">Ok</string>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/colorPrimary"
+              android:gravity="center"
+              android:text="El ganador/a es:"
+              android:textColor="@android:color/white"
+              android:textSize="30dp"/>
+
+    <TextView android:id="@+id/winnerName"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/colorPrimaryDark"
+              android:gravity="center"
+              android:textColor="@color/colorAccent"
+              android:textSize="60dp"/>
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:id="@+id/okButton"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorAccent"
+            android:textSize="30sp"
+        android:text="@string/ok"/>
+</LinearLayout>
