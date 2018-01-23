@@ -1,4 +1,4 @@
-package com.example.franciscozuccala.randoname;
+package com.github.franciscozuccala.randoname.ui;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -11,7 +11,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.franciscozuccala.randoname.domain.Person;
+import com.github.franciscozuccala.randoname.domain.Person;
+import com.github.franciscozuccala.randoname.R;
 
 import java.util.List;
 

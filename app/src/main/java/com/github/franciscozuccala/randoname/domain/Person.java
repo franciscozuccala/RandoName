@@ -1,10 +1,7 @@
-package com.example.franciscozuccala.randoname.domain;
+package com.github.franciscozuccala.randoname.domain;
 
 import java.io.Serializable;
 
-/**
- * Created by franciscozuccala on 10/06/16.
- */
 public class Person implements Serializable {
 	private String name;
 

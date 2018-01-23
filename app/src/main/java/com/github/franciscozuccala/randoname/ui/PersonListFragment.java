@@ -1,4 +1,4 @@
-package com.example.franciscozuccala.randoname;
+package com.github.franciscozuccala.randoname.ui;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
@@ -15,8 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.franciscozuccala.randoname.domain.Person;
-import com.example.franciscozuccala.randoname.domain.PersonsList;
+import com.github.franciscozuccala.randoname.domain.Person;
+import com.github.franciscozuccala.randoname.domain.PersonsList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,14 +39,14 @@ public class PersonListFragment extends Fragment {
 	@Override
 	public View onCreateView(final LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_list, container, false);
+		View view = inflater.inflate(com.github.franciscozuccala.randoname.R.layout.fragment_list, container, false);
 		if (savedInstanceState != null) {
 			persons = ((PersonsList)savedInstanceState.getSerializable("PersonsList")).getPersons();
 		}
 		if (persons == null) {
 			persons = new ArrayList<Person>();
 		}
-		recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
+		recyclerView = (RecyclerView)view.findViewById(com.github.franciscozuccala.randoname.R.id.recyclerView);
 		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
 		adapter = new PersonRecyclerViewAdapter(persons, new PersonRecyclerViewAdapter.OnItemClickListener() {
 			@Override
@@ -61,7 +61,7 @@ public class PersonListFragment extends Fragment {
 		itemAnimator.setAddDuration(1000);
 		itemAnimator.setRemoveDuration(1000);
 		recyclerView.setItemAnimator(itemAnimator);
-		floatingActionButton = (FloatingActionButton)view.findViewById(R.id.addFab);
+		floatingActionButton = (FloatingActionButton)view.findViewById(com.github.franciscozuccala.randoname.R.id.addFab);
 		floatingActionButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -69,7 +69,7 @@ public class PersonListFragment extends Fragment {
 				alertDialog.show();
 			}
 		});
-		getNameButton = (Button)view.findViewById(R.id.button);
+		getNameButton = (Button)view.findViewById(com.github.franciscozuccala.randoname.R.id.button);
 		getNameButton.setClickable(true);
 		getNameButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -94,12 +94,12 @@ public class PersonListFragment extends Fragment {
 
 	public AlertDialog createAddDialog() {
 		LayoutInflater linf = LayoutInflater.from(getActivity());
-		final View inflator = linf.inflate(R.layout.insert_dialog, null);
+		final View inflator = linf.inflate(com.github.franciscozuccala.randoname.R.layout.insert_dialog, null);
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		builder.setView(inflator);
 		final AlertDialog alertDialog=builder.create();
-		final EditText text = (EditText)inflator.findViewById(R.id.newPerson);
-		Button yesButton = (Button)inflator.findViewById(R.id.yesButton);
+		final EditText text = (EditText)inflator.findViewById(com.github.franciscozuccala.randoname.R.id.newPerson);
+		Button yesButton = (Button)inflator.findViewById(com.github.franciscozuccala.randoname.R.id.yesButton);
 		yesButton.setClickable(true);
 		yesButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -108,7 +108,7 @@ public class PersonListFragment extends Fragment {
 				alertDialog.cancel();
 			}
 		});
-		Button noButton = (Button)inflator.findViewById(R.id.noButton);
+		Button noButton = (Button)inflator.findViewById(com.github.franciscozuccala.randoname.R.id.noButton);
 		noButton.setClickable(true);
 		noButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -121,13 +121,13 @@ public class PersonListFragment extends Fragment {
 
 	public AlertDialog createWinnerDialog(String winner) {
 		LayoutInflater linf = LayoutInflater.from(getActivity());
-		final View inflator = linf.inflate(R.layout.winner_dialog, null);
+		final View inflator = linf.inflate(com.github.franciscozuccala.randoname.R.layout.winner_dialog, null);
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		builder.setView(inflator);
 		final AlertDialog alertDialog=builder.create();
-		TextView text = (TextView)inflator.findViewById(R.id.winnerName);
+		TextView text = (TextView)inflator.findViewById(com.github.franciscozuccala.randoname.R.id.winnerName);
 		text.setText(winner);
-		Button okButton = (Button)inflator.findViewById(R.id.okButton);
+		Button okButton = (Button)inflator.findViewById(com.github.franciscozuccala.randoname.R.id.okButton);
 		okButton.setClickable(true);
 		okButton.setOnClickListener(new View.OnClickListener() {
 			@Override
